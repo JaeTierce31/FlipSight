@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlipSight — Lens Preview (no hardware needed)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a0a; color: #eee;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 24px; padding: 32px;
+  }
+  h1 { font-size: 28px; }
+  p.sub { color: #999; max-width: 640px; text-align: center; line-height: 1.5; }
+  .lens {
+    width: 600px; height: 600px;
+    border: 14px solid #1c1c1e; border-radius: 48px;
+    overflow: hidden; box-shadow: 0 0 80px rgba(34,197,94,.15);
+    position: relative;
+  }
+  .lens iframe { width: 100%; height: 100%; border: 0; }
+  .tag {
+    position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+    background: #1c1c1e; color: #999; font-size: 13px; letter-spacing: 2px;
+    padding: 6px 14px; border-radius: 999px; text-transform: uppercase;
+  }
+  .hints { color: #999; font-size: 15px; text-align: center; line-height: 1.7; }
+  kbd { background: #1c1c1e; border: 1px solid #333; border-radius: 6px; padding: 2px 8px; }
+</style>
+</head>
+<body>
+  <h1>FlipSight — simulated lens</h1>
+  <p class="sub">This frame stands in for the Ray-Ban Display's 600×600 lens panel.
+  Record it for your demo video until you're testing on real hardware.</p>
+  <div class="lens">
+    <div class="tag">simulated lens · 600 × 600</div>
+    <iframe src="../app/index.html" title="FlipSight HUD"></iframe>
+  </div>
+  <p class="hints">
+    <kbd>←</kbd> <kbd>→</kbd> to flip deals · swipe on touch · buttons stand in for Neural Band gestures
+  </p>
+</body>
+</html>

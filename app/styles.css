@@ -1,0 +1,77 @@
+/* FlipSight HUD — glanceable design for a 600x600 lens panel.
+   Rules: 2-second reads, huge numbers, high contrast, no dense UI. */
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --dim: #9a9a9a;
+  --good: #22c55e;
+  --deal: #eab308;
+  --bad: #ef4444;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#hud {
+  width: 600px;
+  height: 600px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.badge {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+.badge.good-deal { background: var(--good); color: #000; }
+.badge.deal { background: var(--deal); color: #000; }
+.badge.bad-deal, .badge.no-go { background: var(--bad); color: #fff; }
+#counter { color: var(--dim); font-size: 26px; font-weight: 600; }
+h1 {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 26px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.prices { display: flex; gap: 36px; margin-bottom: 22px; }
+.price { display: flex; flex-direction: column; }
+.price span:first-child { font-size: 64px; font-weight: 800; }
+.price .label { color: var(--dim); font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
+.ask { color: var(--fg); }
+.market { color: var(--dim); text-decoration: line-through; }
+.margin { color: var(--good); }
+.meta { font-size: 28px; color: var(--dim); margin-bottom: 14px; }
+.why { font-size: 30px; line-height: 1.35; flex: 1; }
+footer { display: flex; gap: 16px; margin-top: 20px; }
+button {
+  flex: 1;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 18px;
+  border-radius: 16px;
+  border: 2px solid #333;
+  background: #111;
+  color: var(--fg);
+  cursor: pointer;
+}
+button:active { background: #222; }

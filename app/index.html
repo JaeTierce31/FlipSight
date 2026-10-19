@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Lens target: Ray-Ban Display right-lens panel is 600x600. Design for that box. -->
+<meta name="viewport" content="width=600, initial-scale=1">
+<title>FlipSight</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main id="hud" aria-live="polite">
+  <header>
+    <span id="tier" class="badge">—</span>
+    <span id="counter">– / –</span>
+  </header>
+
+  <h1 id="title">Loading deals…</h1>
+
+  <section class="prices">
+    <div class="price"><span id="ask" class="ask">–</span><span class="label">ask</span></div>
+    <div class="price"><span id="market" class="market">–</span><span class="label">market</span></div>
+    <div class="price"><span id="margin" class="margin">–</span><span class="label">margin</span></div>
+  </section>
+
+  <p id="meta" class="meta">–</p>
+  <p id="why" class="why">–</p>
+
+  <footer>
+    <button id="prev" type="button">← Prev</button>
+    <button id="next" type="button">Next →</button>
+  </footer>
+  <!-- TODO(wearables): replace buttons + keys with Neural Band gesture input
+       via the Wearables Web Apps input API. See docs/ARCHITECTURE.md. -->
+</main>
+<script src="deals-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
